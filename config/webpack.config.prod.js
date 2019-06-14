@@ -25,10 +25,10 @@ const webpack = require( 'webpack' );
 const externals = require( './externals' );
 const autoprefixer = require( 'autoprefixer' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
-const UnminifiedWebpackPlugin = require('unminified-webpack-plugin');
+// const UnminifiedWebpackPlugin = require('unminified-webpack-plugin');
 
 // Provide unminified source files as well
-const unminifiedWebpackPlugin = new UnminifiedWebpackPlugin();
+// const unminifiedWebpackPlugin = new UnminifiedWebpackPlugin();
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP === 'true';
@@ -127,7 +127,7 @@ module.exports = {
 	plugins: [
 		blocksCSSPlugin,
 		editBlocksCSSPlugin,
-		unminifiedWebpackPlugin,
+		// unminifiedWebpackPlugin,
 		// Minify the code.
 		new webpack.optimize.UglifyJsPlugin( {
 			compress: {
